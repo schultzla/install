@@ -1,4 +1,5 @@
 #! /bin/sh
+sudo echo "deb http://http.debian.net/debian stretch main contrib non-free" >> /etc/apt/sources.list
 sudo apt-get update #gets latest package lists
 sudo apt-get install -y feh make rofi firmware-realtek xorg xserver-xorg-core lightdm tty-clock pulseaudio firmware-iwlwifi git libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev rxvt-unicode wicd vim geany chromium w3m w3m-img neofetch imagemagick libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev curl automake libtool --no-install-recommends 
 
@@ -24,6 +25,9 @@ git clone https://github.com/dylanaraps/wal.git
 mkdir Pictures/
 mv ~/wal/wal ~/Pictures/
 mv ~/wal/colors/ ~/Pictures/
+cd ~/
+rm -rf ~/wal/
+cd ~/
 
 echo "Installing i3-gaps"
 git clone https://www.github.com/Airblader/i3/ i3-gaps
