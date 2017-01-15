@@ -10,6 +10,7 @@ cd ~/
 wget https://github.com/fabiofalci/sconsify/releases/download/v0.4.0-rc2/linux-x86_64-sconsify-0.4.0-rc2.zip
 unzip linux-x86_64-sconsify-0.4.0-rc2.zip
 chmod +x sconsify
+mkdir Scripts
 mv sconsify ~/Scripts/
 cd ~/
 git clone https://github.com/karlstav/cava.git
@@ -36,7 +37,7 @@ cd i3-gaps
 autoreconf --force --install
 rm -rf build/
 mkdir -p build && cd build/
-../configure --prefix=/usr --sysconfdir=/etc --dsiable-sanitizers
+../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
 make
 sudo make install
 cd ~/
@@ -47,7 +48,6 @@ mv ~/dotfiles/.config/ ~/
 mv ~/dotfiles/.bashrc ~/
 mv ~/dotfiles/.Xresources ~/
 mv ~/dotfiles/Q45T2Qu.jpg ~/Pictures/Q45T2Qu.jpg
-mkdir Scripts
 chmod +x ~/dotfiles/pipes.sh
 chmod +x ~/dotfiles/space.sh
 mv ~/dotfiles/pipes.sh ~/Scripts/
