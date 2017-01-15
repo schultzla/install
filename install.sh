@@ -7,10 +7,10 @@ echo "Packages and Dependencies Insatlled, Now Grabbing i3, cava, sconsify"
 curl http://apt.mopidy.com/mopidy.gpg | sudo apt-key add - && sudo curl -o /etc/apt/sources.list.d/mopidy.list http://apt.mopidy.com/mopidy.list
 sudo apt-get update && sudo apt-get install -y libportaudio2 libspotify12 --no-install-recommends
 cd ~/
-mkdir Sconsify/
-cd Sconsify/
 wget https://github.com/fabiofalci/sconsify/releases/download/v0.4.0-rc2/linux-x86_64-sconsify-0.4.0-rc2.zip
 unzip linux-x86_64-sconsify-0.4.0-rc2.zip
+chmod +x sconsify
+mv sconsify ~/Scripts/
 cd ~/
 git clone https://github.com/karlstav/cava.git
 cd ~/cava/
@@ -18,6 +18,7 @@ cd ~/cava/
 ./configure
 make
 sudo make install
+rm -rf ~/cava/
 cd ~/
 
 echo "Installing wal script from Dylan's github"
@@ -47,9 +48,10 @@ mv ~/dotfiles/.bashrc ~/
 mv ~/dotfiles/.Xresources ~/
 mv ~/dotfiles/Q45T2Qu.jpg ~/Pictures/Q45T2Qu.jpg
 mkdir Scripts
+chmod +x ~/dotfiles/pipes.sh
+chmod +x ~/dotfiles/space.sh
 mv ~/dotfiles/pipes.sh ~/Scripts/
 mv ~/dotfiles/space.sh ~/Scripts/
-mv ~/Sconsify/sconsify ~/Scripts/
 cd ~/
 
 wget https://github.com/be5invis/Iosevka/releases/download/v1.10.4/01.iosevka-1.10.4.zip
