@@ -44,6 +44,7 @@ mv /home/logan/dotfiles/.Xresources /home/logan/
 mkdir Scripts
 mv /home/logan/dotfiles/pipes.sh /home/logan/Scripts/
 mv /home/logan/dotfiles/space.sh /home/logan/Scripts/
+mv /home/logan/Sconsify/sconsify /home/logan/Scripts/
 cd /home/logan/
 
 echo "Install complete, reboot now"
