@@ -1,6 +1,6 @@
 #! /bin/sh
-apt-get update #gets latest package lists
-apt-get install -y feh firmware-realtek xorg xserver-xorg-core lightdm tty-clock pulseaudio firmware-iwlwifi git libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev rxvt-unicode wicd vim geany chromium w3m w3m-img neofetch imagemagick libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev curl automake libtool --no-install-recommends 
+sudo apt-get update #gets latest package lists
+sudo apt-get install -y feh make rofi firmware-realtek xorg xserver-xorg-core lightdm tty-clock pulseaudio firmware-iwlwifi git libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev rxvt-unicode wicd vim geany chromium w3m w3m-img neofetch imagemagick libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev curl automake libtool --no-install-recommends 
 
 echo "Packages and Dependencies Insatlled, Now Grabbing i3, cava, sconsify"
 curl http://apt.mopidy.com/mopidy.gpg | sudo apt-key add - && sudo curl -o /etc/apt/sources.list.d/mopidy.list http://apt.mopidy.com/mopidy.list
@@ -26,7 +26,7 @@ mv /home/logan/wal/wal /home/logan/Pictures/
 mv /home/logan/wal/colors/ /home/logan/Pictures/
 
 echo "Installing i3-gaps"
-git clone https://www.github.com/Airblader/i3/i3-gaps
+git clone https://www.github.com/Airblader/i3/ i3-gaps
 cd i3-gaps
 autoreconf --force --install
 rm -rf build/
@@ -47,10 +47,10 @@ mv /home/logan/dotfiles/space.sh /home/logan/Scripts/
 mv /home/logan/Sconsify/sconsify /home/logan/Scripts/
 cd /home/logan/
 
-wget https://github.com/be5invis/Iosevka/releases/download/v1.10.4/02.iosevka-term-1.10.4.zip
-sudo mv 02.iosevka.term-1.10.4.zip /usr/share/fonts/
+wget https://github.com/be5invis/Iosevka/releases/download/v1.10.4/01.iosevka-1.10.4.zip
+sudo mv 01.iosevka-1.10.4.zip /usr/share/fonts/
 cd /usr/share/fonts/
-sudo unzip 02.iosevka.term-1.10.4.zip
+sudo unzip 01.iosevka-1.10.4.zip
 cd /home/logam/
 
 echo "Install complete, reboot now"
