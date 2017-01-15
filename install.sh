@@ -5,25 +5,25 @@ sudo apt-get install -y feh make rofi firmware-realtek xorg xserver-xorg-core li
 echo "Packages and Dependencies Insatlled, Now Grabbing i3, cava, sconsify"
 curl http://apt.mopidy.com/mopidy.gpg | sudo apt-key add - && sudo curl -o /etc/apt/sources.list.d/mopidy.list http://apt.mopidy.com/mopidy.list
 sudo apt-get update && sudo apt-get install -y libportaudio2 libspotify12 --no-install-recommends
-cd /home/logan/
+cd ~/
 mkdir Sconsify/
 cd Sconsify/
 wget https://github.com/fabiofalci/sconsify/releases/download/v0.4.0-rc2/linux-x86_64-sconsify-0.4.0-rc2.zip
 unzip linux-x86_64-sconsify-0.4.0-rc2.zip
-cd /home/logan/
+cd ~/
 git clone https://github.com/karlstav/cava.git
-cd /home/logan/cava/
+cd ~/cava/
 ./autogen.sh
 ./configure
 make
 sudo make install
-cd /home/logan/
+cd ~/
 
 echo "Installing wal script from Dylan's github"
 git clone https://github.com/dylanaraps/wal.git
 mkdir Pictures/
-mv /home/logan/wal/wal /home/logan/Pictures/
-mv /home/logan/wal/colors/ /home/logan/Pictures/
+mv ~/wal/wal ~/Pictures/
+mv ~/wal/colors/ ~/Pictures/
 
 echo "Installing i3-gaps"
 git clone https://www.github.com/Airblader/i3/ i3-gaps
@@ -34,24 +34,25 @@ mkdir -p build && cd build/
 ../configure --prefix=/usr --sysconfdir=/etc --dsiable-sanitizers
 make
 sudo make install
-cd /home/logan/
+cd ~/
 
 echo "Grabbing dotfiles from my github"
 git clone https://github.com/schultzla/dotfiles.git
-mv /home/logan/dotfiles/.config/ /home/logan/
-mv /home/logan/dotfiles/.bashrc /home/logan/
-mv /home/logan/dotfiles/.Xresources /home/logan/
+mv ~/dotfiles/.config/ ~/
+mv ~/dotfiles/.bashrc ~/
+mv ~/dotfiles/.Xresources ~/
+mv ~/dotfiles/Q45T2Qu.jpg ~/Pictures/Q45T2Qu.jpg
 mkdir Scripts
-mv /home/logan/dotfiles/pipes.sh /home/logan/Scripts/
-mv /home/logan/dotfiles/space.sh /home/logan/Scripts/
-mv /home/logan/Sconsify/sconsify /home/logan/Scripts/
-cd /home/logan/
+mv ~/dotfiles/pipes.sh ~/Scripts/
+mv ~/dotfiles/space.sh ~/Scripts/
+mv ~/Sconsify/sconsify ~/Scripts/
+cd ~/
 
 wget https://github.com/be5invis/Iosevka/releases/download/v1.10.4/01.iosevka-1.10.4.zip
 sudo mv 01.iosevka-1.10.4.zip /usr/share/fonts/
 cd /usr/share/fonts/
 sudo unzip 01.iosevka-1.10.4.zip
-cd /home/logam/
+cd ~/
 
 echo "Install complete, reboot now"
 
