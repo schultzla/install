@@ -1,7 +1,18 @@
 #! /bin/sh
 sudo echo "deb http://http.debian.net/debian stretch main contrib non-free" >> /etc/apt/sources.list
 sudo apt-get update #gets latest package lists
-sudo apt-get install -y feh make rofi firmware-realtek xorg xserver-xorg-core lightdm tty-clock pulseaudio firmware-iwlwifi git libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev rxvt-unicode wicd vim geany chromium w3m w3m-img neofetch imagemagick libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev curl automake libtool --no-install-recommends 
+sudo apt-get install -y alsa-utils feh make rofi firmware-realtek xorg xserver-xorg-core lightdm tty-clock pulseaudio firmware-iwlwifi git libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev rxvt-unicode wicd vim geany chromium w3m w3m-img neofetch imagemagick libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev curl automake libtool --no-install-recommends 
+
+echo "Installing fftw package for cava"
+wget www.fftw.org/fftw-3.3.6.tar.gz
+tar -xzf fftw-3.3.6.tar.gz
+cd fftw-3.3.6.tar.gz
+./configure
+make
+sudo make install
+cd ~/
+rm -rf fftw-3.3.6.tar.gz
+rm -rf fftw-3.3.6/
 
 echo "Packages and Dependencies Insatlled, Now Grabbing i3, cava, sconsify"
 curl http://apt.mopidy.com/mopidy.gpg | sudo apt-key add - && sudo curl -o /etc/apt/sources.list.d/mopidy.list http://apt.mopidy.com/mopidy.list
@@ -41,6 +52,7 @@ mkdir -p build && cd build/
 make
 sudo make install
 cd ~/
+rm -rf i3-gaps/
 
 echo "Grabbing dotfiles from my github"
 git clone https://github.com/schultzla/dotfiles.git
