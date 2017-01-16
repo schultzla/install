@@ -6,7 +6,11 @@ Debian install script, grabs all my dotfiles and used packages, moves to directo
 
 Basically, I made this script for two reasons. First being, as many people probably do, I break my linux setup on the daily with testing out new packages and what not. So I created this install script to get me back to the point I like being. I update the script at random times with any new packages I add that I actually use often. The second reason I made this script was that I noticed that the majority of people use i3-gaps with this similar config. It's the stereotypical setup, so if anyone stumbles upon this having trouble getting to that point, you can use this script as it will get you all the way there. Only a few steps need to be done before using the script
 
-## How To Use
+## How To Use (Experienced)
+
+Here I won't explain the steps, but rather just tell you what to do. Install debian using a netinst ISO selecting only system utilities during the install as the packages you want, install sudo, add yourself as a user, install git, clone my install repository, mv the install script from the install folder to ~/, run the script as sudo. 
+
+## How To Use (Beginners)
 
 Note: this is only for debian
 
