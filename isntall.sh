@@ -1,10 +1,17 @@
 #! /bin/sh
 echo "deb http://http.debian.net/debian stretch main contrib non-free" | sudo tee -a /etc/apt/sources.list
 sudo apt-get update #gets latest package lists
-sudo apt-get install -y alsa-utils feh make rofi firmware-realtek xorg xserver-xorg-core lightdm tty-clock pulseaudio firmware-iwlwifi git libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev rxvt-unicode wicd vim geany chromium w3m w3m-img neofetch imagemagick libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev curl automake libtool --no-install-recommends 
+sudo apt-get install -y alsa-utils feh make rofi firmware-realtek xorg xserver-xorg-core lightdm tty-clock pulseaudio firmware-iwlwifi git libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev rxvt-unicode wicd vim geany w3m w3m-img neofetch imagemagick libfftw3-dev libasound2-dev libncursesw5-dev libpulse-dev curl automake libtool --no-install-recommends 
 
 echo "Cleaning up some files"
 rm -rf install/
+
+echo "Installing chrome browser and dependencies"
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt-get install -f
+rm -rf google-chrome-stable_current_amd64.deb
+cd ~/
 
 echo "Installing fftw package for cava"
 wget www.fftw.org/fftw-3.3.6.tar.gz
@@ -69,6 +76,7 @@ chmod +x ~/dotfiles/space.sh
 mv ~/dotfiles/pipes.sh ~/Scripts/
 mv ~/dotfiles/space.sh ~/Scripts/
 cd ~/
+rm -rf dotfiles/
 
 wget https://github.com/be5invis/Iosevka/releases/download/v1.10.4/01.iosevka-1.10.4.zip
 sudo mv 01.iosevka-1.10.4.zip /usr/share/fonts/
