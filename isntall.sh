@@ -70,7 +70,7 @@ git clone https://github.com/schultzla/dotfiles.git
 mv ~/dotfiles/.config/ ~/
 mv ~/dotfiles/.bashrc ~/
 mv ~/dotfiles/.Xresources ~/
-mv ~/dotfiles/Q45T2Qu.jpg ~/Pictures/Q45T2Qu.jpg
+mv ~/dotfiles/girl.jpg ~/Pictures/girl.jpg
 chmod +x ~/dotfiles/pipes.sh
 chmod +x ~/dotfiles/space.sh
 mv ~/dotfiles/pipes.sh ~/Scripts/
